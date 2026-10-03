@@ -53,7 +53,7 @@ const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','se
 const DS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],DC=['D','L','M','X','J','V','S'];
 const INT=['','🟢 Recuperación','🔵 Ligero','🟡 Moderado','🟠 Intenso','🔴 Muy intenso'];
 const IC={car:'🏃',fz:'💪',pie:'🦵',core:'🔥',mov:'🧘',fut:'⚽'};
-const ALT={car:'Cardio indoor (saltos, step, bici estática)',fut:'Circuito indoor de footwork y agilidad'};
+const ALT={car:'Cardio indoor (elíptica, saltos o step)',fut:'Circuito indoor de footwork y agilidad'};
 const MSG=['Entrenamiento completado.','Otro día cumplido.','Vas construyendo constancia.','Sesión completada.'];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const f12=t=>{const h=+t.slice(0,2);return `${h%12||12}:${t.slice(3)} ${h<12?'AM':'PM'}`};
@@ -66,7 +66,7 @@ const W=[
 {f:'Descanso / recuperación activa',i:1,rest:1,a:[['car','Caminata ligera (opcional)',20,'m',1],['mov','Estiramiento suave (opcional)',10,'m'],['mov','Hidratación y sueño de calidad',1,'m']]},
 {f:'Fuerza de piernas',i:4,a:[['mov','Movilidad de tobillos y cadera',10,'m'],['pie','Sentadilla',12,'s'],['pie','Zancadas caminando',10,'s'],['pie','Peso muerto rumano',10,'s'],['pie','Elevación de talones',15,'s'],['core','Plancha',30,'t']]},
 {f:'Fútbol técnico + core',i:2,a:[['mov','Calentamiento',8,'m'],['fut','Conducción y pases con balón',20,'m',1],['fut','Coordinación y toques',10,'m'],['core','Plancha',30,'t'],['mov','Movilidad de cadera',8,'m']]},
-{f:'Cardio + tren superior + core',i:3,a:[['car','Cardio continuo (trote / bici)',30,'m',1],['fz','Flexiones',10,'s'],['fz','Press de hombros con mochila',10,'s'],['core','Plancha',30,'t'],['mov','Movilidad de cadera y tobillos',10,'m']]}];
+{f:'Cardio + tren superior + core',i:3,a:[['car','Cardio continuo (elíptica)',30,'m',1],['fz','Flexiones',10,'s'],['fz','Press de hombros con mochila',10,'s'],['core','Plancha',30,'t'],['mov','Movilidad de cadera y tobillos',10,'m']]}];
 const PL={};
 function plan(k){if(PL[k])return PL[k];const d=dk(k),idx=Math.round((d-D0)/864e5),w=Math.floor(idx/7),ph=d.getMonth()-9,dl=w%4==3,T=W[d.getDay()];
 const mu=(1+.04*w)*(dl?.8:1),sets=Math.max(2,(ph?3:2)-(dl?1:0));
